@@ -116,6 +116,18 @@ gcloud run deploy ad-creator-studio \
 
 ---
 
+## ⚠️ Prototype Disclaimer & Production Readiness
+
+**ZiWan - Ad Studio** is provided as an open-source architectural blueprint and Proof-of-Concept (PoC). While the underlying Gemini Enterprise Agent Platform and Veo models are enterprise-grade, the orchestration layer in this repository has been designed for demonstration and prototyping purposes. 
+
+**Important considerations before production deployment:**
+* **Job Throttling & Quotas:** This prototype does not currently implement rigid rate-limiting or queue capping. Ingesting massive un-throttled datasets (e.g., triggering 600+ concurrent asynchronous video rendering jobs) can overwhelm standard Google Cloud quotas and create severe Pub/Sub backlogs. 
+* **Production Recommendation:** If deploying this pipeline for a true production workload, you **must** implement strict concurrency controls, robust Dead Letter Queues (DLQs), and enforce strict quota management on the Video API to prevent runaway billing or throttling errors. 
+
+This repository is strictly for educational, prototyping, and foundational architectural design.
+
+---
+
 ## 📄 License
 
 Distributed under the Apache License, Version 2.0. See `LICENSE` for more information.
