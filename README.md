@@ -118,10 +118,11 @@ gcloud run deploy ad-creator-studio \
 
 ## ⚠️ Prototype Disclaimer & Production Readiness
 
-**ZiWan - Ad Studio** is provided as an open-source architectural blueprint and Proof-of-Concept (PoC). While the underlying Gemini Enterprise Agent Platform and Veo models are enterprise-grade, the orchestration layer in this repository has been designed for demonstration and prototyping purposes. 
+**ZiWan - Ad Studio** is provided as an open-source architectural blueprint and Proof-of-Concept (PoC). While the underlying Gemini Enterprise Agent Platform (including Gemini Omni Flash and Veo) offers enterprise-grade capabilities, the orchestration layer in this repository has been designed for demonstration and foundational prototyping purposes. 
 
 **Important considerations before production deployment:**
-This solution should **not** be deployed into a production environment without undergoing rigorous, enterprise-standard validations. If adapting this architecture for a live project, organizations must implement and validate proper Non-Functional Requirements (NFRs), including but not limited to:
+This solution should **not** be deployed into a production environment without undergoing rigorous, enterprise-standard validations. If adapting this architecture for a live project, organizations must implement and validate proper Non-Functional Requirements (NFRs) and functional test suites, including but not limited to:
+* **Functional & Integration Testing:** Ensuring end-to-end multi-agent workflows gracefully handle data anomalies, API timeouts, and edge cases.
 * **Comprehensive Load Testing:** Validating system stability and throughput under massive, concurrent asynchronous job volumes.
 * **Quota & Throttling Management:** Implementing strict API rate-limiting, robust Dead Letter Queues (DLQs), and enforcing quota limits to prevent runaway billing or throttling errors.
 * **Security & Auditing:** Conducting thorough security reviews prior to handling live customer data. 
