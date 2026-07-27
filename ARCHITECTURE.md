@@ -83,7 +83,7 @@ flowchart TB
 ### Component Breakdown & Architectural Rationale
 *   **FastAPI Gateway:** Chosen for high concurrency support when accepting massive catalog uploads.
 *   **Event Broker (Pub/Sub):** Video generation is notoriously slow. Synchronous HTTP would time out. Pub/Sub allows agents to pick up jobs asynchronously and retry on failures.
-*   **Vertex AI Foundation Models:** Uses Gemini 3.1 Pro for complex reasoning, Vision for Image QC, Flash TTS for ultra-fast audio, and Veo 3.1 for state-of-the-art multimodal video generation.
+*   **Gemini Enterprise Agent Platform Foundation Models:** Uses Gemini 3.1 Pro for complex reasoning, Vision for Image QC, Flash TTS for ultra-fast audio, and Veo 3.1 for state-of-the-art multimodal video generation.
 *   **Stitcher Engine (FFmpeg):** Uses system-level FFmpeg for blazingly fast compositing, avoiding heavy and costly cloud-rendering services.
 
 ---
@@ -100,7 +100,7 @@ sequenceDiagram
     participant Seg as Segmentation Agent
     participant Gen as Generation Agent
     participant Stitch as Stitcher Engine
-    participant Vertex as Vertex AI APIs
+    participant Vertex as Gemini Enterprise Agent Platform APIs
     participant Storage as GCS Storage Vault
 
     User->>API: Upload CSV/XLSX Sheet + PSN Identifier
@@ -283,7 +283,7 @@ flowchart TD
 | Variable | Description |
 | :--- | :--- |
 | `GOOGLE_CLOUD_PROJECT` | GCP Project ID (e.g., `your-gcp-project-id`) |
-| `DEFAULT_LOCATION` | Region for Vertex AI (e.g., `us-central1`) |
+| `DEFAULT_LOCATION` | Region for Gemini Enterprise Agent Platform (e.g., `us-central1`) |
 | `INGEST_BUCKET` | Vault for raw catalog sheets and images |
 | `OUTPUT_BUCKET` | Vault for finalized video ads |
 | `DEFAULT_MODEL` | Set to `gemini-3.1-pro-preview` |

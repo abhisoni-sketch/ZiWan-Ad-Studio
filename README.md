@@ -1,6 +1,6 @@
 # 🎬 ZiWan - Ad Studio
 
-ZiWan - Ad Studio is an enterprise-grade AI video generation pipeline built on Google Vertex AI (Gemini 3.1 Pro, Gemini Omni Flash, Veo 3.1 Fast, and Lyria). It transforms e-commerce product catalogs (CSVs/Excel specifications and studio product images) into professional 60-second video advertisements with dynamic visual effects, TTS voiceovers, background music, and text overlays.
+ZiWan - Ad Studio is an enterprise-grade AI video generation pipeline built on Google Gemini Enterprise Agent Platform (Gemini 3.1 Pro, Gemini Omni Flash, Veo 3.1 Fast, and Lyria). It transforms e-commerce product catalogs (CSVs/Excel specifications and studio product images) into professional 60-second video advertisements with dynamic visual effects, TTS voiceovers, background music, and text overlays.
 
 ---
 
@@ -26,7 +26,7 @@ ZiWan - Ad Studio is an enterprise-grade AI video generation pipeline built on G
            │
            ▼
   ┌──────────────────┐
-  │ Generation Agent │ ──> (Vertex AI Video API: Gemini Omni / Veo 3.1 Fast)
+  │ Generation Agent │ ──> (Gemini Enterprise Agent Platform Video API: Gemini Omni / Veo 3.1 Fast)
   └──────────────────┘
            │
            ▼
@@ -55,7 +55,7 @@ ZiWan - Ad Studio is an enterprise-grade AI video generation pipeline built on G
    * macOS: `brew install ffmpeg`
    * Linux: `sudo apt-get install ffmpeg`
 3. **Google Cloud SDK (`gcloud` CLI):**
-   * Configured with Vertex AI API access (`aiplatform.googleapis.com`).
+   * Configured with Gemini Enterprise Agent Platform API access (`aiplatform.googleapis.com`).
 
 ---
 

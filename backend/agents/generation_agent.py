@@ -261,7 +261,7 @@ class GenerationAgent:
         return 4.0
 
     def run_gcp_generation(self, visual_prompt: str, image_gcs_uris: list[str], duration: int, model_target: str, image_analyses: dict = None, best_front_image: str = None) -> bytes:
-        """Calls the real Vertex AI Video API to generate video bytes."""
+        """Calls the real Gemini Enterprise Agent Platform Video API to generate video bytes."""
         logger.info(f"Calling Google GenAI Video API. Model: {model_target}, Prompt: {visual_prompt}")
         try:
             import time

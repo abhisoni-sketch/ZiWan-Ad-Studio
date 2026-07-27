@@ -23,7 +23,7 @@ Unlike simple UI wrappers, this is a multi-agent architectural topology designed
 *   Google Cloud Run (Stateless Container Orchestration)
 *   Google Cloud Pub/Sub (Asynchronous Event Broker)
 *   Google Cloud Storage (Ingestion and Output Vaults)
-*   Vertex AI (Core Generative Engine)
+*   Gemini Enterprise Agent Platform (Core Generative Engine)
 
 **Availability:** 
 Designed as an open-source, deployable reference architecture and enterprise blueprint on Google Cloud.
@@ -32,7 +32,7 @@ Designed as an open-source, deployable reference architecture and enterprise blu
 
 ### 2. Does the solution include Google AI and if so, what solution or models?
 
-Yes, the solution is deeply integrated with Google's Vertex AI ecosystem, utilizing a multi-modal approach:
+Yes, the solution is deeply integrated with Google's Gemini Enterprise Agent Platform ecosystem, utilizing a multi-modal approach:
 
 *   **Gemini 3.1 Pro Vision:** Powers the "Context Agent" to deduce physical form factors (e.g., 2D flat panels vs. 3D volumetric objects) and rigorously analyze image quality (text density, multi-device detection) to prevent downstream hallucinations.
 *   **Gemini 3.1 Pro:** Powers the "Scripting & Segmentation Agents" to synthesize high-converting voiceover scripts and direct cinematic shots via a proprietary "Hybrid Safety Net" that enforces strict camera physics guardrails.
@@ -58,7 +58,7 @@ Currently, this acts as a robust architectural blueprint and Proof of Concept (P
 
 ### 5. Is this solution available on Google Cloud only?
 
-**Yes.** The solution's orchestration layer relies natively on Google Cloud Pub/Sub for asynchronous event routing, Cloud Run for serverless execution, and Google Cloud Storage for asset vaulting. Most importantly, the core generative engine is exclusively powered by Vertex AI models (Veo and Gemini).
+**Yes.** The solution's orchestration layer relies natively on Google Cloud Pub/Sub for asynchronous event routing, Cloud Run for serverless execution, and Google Cloud Storage for asset vaulting. Most importantly, the core generative engine is exclusively powered by Gemini Enterprise Agent Platform models (Veo and Gemini).
 
 ---
 

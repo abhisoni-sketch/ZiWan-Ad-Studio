@@ -28,7 +28,7 @@ Ensure the category (e.g., "Smartphones", "Televisions", "Laptops", "Home Applia
 
 ## 2. Reference Image Best Practices
 
-The Generation Agent is highly selective about which images it passes to the Vertex AI Video API. It uses Gemini Vision to score and rank your folder of images. Supplying the right images ensures the video model has a clean "anchor" to generate accurate physics.
+The Generation Agent is highly selective about which images it passes to the Gemini Enterprise Agent Platform Video API. It uses Gemini Vision to score and rank your folder of images. Supplying the right images ensures the video model has a clean "anchor" to generate accurate physics.
 
 ### ✅ DO: Provide Clean Studio Shots (`is_clean_product_shot`)
 **The absolute best images to provide are clean, high-resolution product shots on plain white, black, or neutral backgrounds.** 

@@ -32,7 +32,7 @@ class ScriptingAgent:
             logger.info("Initializing GenAI client using GEMINI_API_KEY")
             self.client = genai.Client(api_key=api_key)
         else:
-            logger.info(f"Initializing GenAI client in Vertex AI mode for project: {PROJECT_ID}")
+            logger.info(f"Initializing GenAI client in Gemini Enterprise Agent Platform mode for project: {PROJECT_ID}")
             loc = get_model_location(DEFAULT_MODEL, DEFAULT_LOCATION)
             self.client = genai.Client(vertexai=True, project=PROJECT_ID, location=loc)
 

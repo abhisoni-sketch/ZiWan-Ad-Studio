@@ -9,7 +9,7 @@
 
 ### Key Capabilities
 * **Multi-Agent Orchestration:** Specialized Python micro-agents collaborating asynchronously via event-driven messaging (Google Cloud Pub/Sub architecture).
-* **Foundation Models:** Powered by Vertex AI foundation models (**Gemini 3.1 Pro**, **Gemini Omni Flash**, **Veo 3.1 Fast**, **Gemini 3.1 Flash TTS**, and **Lyria Audio**).
+* **Foundation Models:** Powered by Gemini Enterprise Agent Platform foundation models (**Gemini 3.1 Pro**, **Gemini Omni Flash**, **Veo 3.1 Fast**, **Gemini 3.1 Flash TTS**, and **Lyria Audio**).
 * **Computer Vision Guardrails:** Automated image filtering using structured vision Pydantic analysis to eliminate multi-device clutter, infographic text bleeding, and 3D chassis distortion ("melting").
 * **Procedural Compositing Engine:** Multi-pass FFmpeg rendering pipeline performing automated text overlay drawing, audio crossfading, voiceover time-stretching, and 1080p master assembly.
 
@@ -42,7 +42,7 @@ flowchart TB
         Storage["Storage Provider\n(Local storage/ / GCS Vaults)"]
     end
 
-    subgraph Vertex AI Foundation Models
+    subgraph Gemini Enterprise Agent Platform Foundation Models
         GeminiPro["Gemini 3.1 Pro\n(Reasoning & Scripting)"]
         GeminiVision["Gemini 3.1 Pro Vision\n(Image Analysis & QC)"]
         VeoAPI["Veo 3.1 Fast / Omni Flash\n(Video Generation API)"]
@@ -95,7 +95,7 @@ sequenceDiagram
     participant Seg as Segmentation Agent
     participant Gen as Generation Agent
     participant Stitch as Stitcher Engine
-    participant Vertex as Vertex AI APIs
+    participant Vertex as Gemini Enterprise Agent Platform APIs
     participant Storage as GCS Storage Vault
 
     User->>API: Upload CSV/XLSX Sheet + PSN Identifier
@@ -221,7 +221,7 @@ sequenceDiagram
 
 ### Step 5: Generation Agent (`backend/agents/generation_agent.py`)
 
-* **Primary Function:** Performs multi-pass image selection, TTS voiceover generation, media duration measurement, and Vertex AI video generation.
+* **Primary Function:** Performs multi-pass image selection, TTS voiceover generation, media duration measurement, and Gemini Enterprise Agent Platform video generation.
 * **APIs & Models:** **Veo 3.1 Fast** (`veo-3.1-fast-generate-001`) / **Gemini Omni Flash** (`gemini-omni-flash-preview`), **Gemini 3.1 Flash TTS** (`gemini-3.1-flash-tts-preview`), `imageio_ffmpeg`.
 * **Image Selection Algorithm:**
   1. **Multi-Device Filter:** Rejects images with `has_multiple_devices == True`.
@@ -233,7 +233,7 @@ sequenceDiagram
      *Priority 1:* Clean Studio Shots (`is_clean == True`).
      *Priority 2:* Lowest `text_density_score`.
   4. **TTS Audio Synthesis & Measurement:** Generates voiceover `.wav` audio via Gemini TTS and queries exact duration using system FFmpeg (`get_media_duration`).
-  5. **Vertex AI Video API Call:** Constructs `types.GenerateVideosConfig` with target duration, 16:9 aspect ratio, `DONT_ALLOW` person generation, and attached `types.VideoGenerationReferenceImage` objects. Polls asynchronous LRO operation until complete.
+  5. **Gemini Enterprise Agent Platform Video API Call:** Constructs `types.GenerateVideosConfig` with target duration, 16:9 aspect ratio, `DONT_ALLOW` person generation, and attached `types.VideoGenerationReferenceImage` objects. Polls asynchronous LRO operation until complete.
 
 ---
 
@@ -283,8 +283,8 @@ The application is fully parameterized via environment variables (`.env` file or
 
 | Environment Variable | Description | Default Fallback |
 | :--- | :--- | :--- |
-| `GOOGLE_CLOUD_PROJECT` | GCP Project ID for Vertex AI and GCS API calls. | `dark-torch-384306` |
-| `DEFAULT_LOCATION` | Regional location for standard Vertex AI models. | `asia-south1` |
+| `GOOGLE_CLOUD_PROJECT` | GCP Project ID for Gemini Enterprise Agent Platform and GCS API calls. | `dark-torch-384306` |
+| `DEFAULT_LOCATION` | Regional location for standard Gemini Enterprise Agent Platform models. | `asia-south1` |
 | `GCS_MOUNT_PATH` | Path for temporary file staging. | `/tmp/` |
 | `INGEST_BUCKET` | GCS bucket name for raw catalog sheets and images. | `${PROJECT_ID}-ingest-vault` |
 | `OUTPUT_BUCKET` | GCS bucket name for finalized video ads. | `${PROJECT_ID}-production-vault` |

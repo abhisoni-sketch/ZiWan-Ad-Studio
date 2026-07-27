@@ -48,7 +48,7 @@ TOPIC_GENERATION = "topic-generation"
 TOPIC_VERIFICATION = "topic-verification"
 TOPIC_STITCH = "topic-stitch"
 
-# Vertex AI Default Model configurations
+# Gemini Enterprise Agent Platform Default Model configurations
 DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "gemini-3.1-pro-preview")
 DEFAULT_LOCATION = os.getenv("DEFAULT_LOCATION", "asia-south1")
 
