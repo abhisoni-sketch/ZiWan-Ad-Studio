@@ -1,0 +1,14 @@
+.gcloudignore
+.git
+.gitignore
+
+# Python/Pip
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Local data / DB / storage
+/database/
+storage/
+Example_Video_Clips/

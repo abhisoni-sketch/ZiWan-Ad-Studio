@@ -1,0 +1,27 @@
+{
+  "taskGroups": [
+    {
+      "taskSpec": {
+        "runnables": [
+          {
+            "container": {
+              "imageUri": "asia-south1-docker.pkg.dev/YOUR_PROJECT_ID/studio-repo/batch-worker:latest",
+              "entrypoint": "python",
+              "commands": ["run_batch_worker.py", "--job_id", "test-job", "--task", "generation"]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "allocationPolicy": {
+    "network": {
+      "networkInterfaces": [
+        {
+          "network": "projects/YOUR_PROJECT_ID/global/networks/myvpc",
+          "subnetwork": "projects/YOUR_PROJECT_ID/regions/asia-south1/subnetworks/mysubnet"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.0
+info:
+  title: ZiWan - Ad Studio Enterprise API
+  description: Headless API for the Generative AI ZiWan - Ad Studio. Compliant with ADK 2.0 and integrated with Gemini Enterprise Workspace.
+  version: 2.0.0-golden-a2ui
+servers:
+  - url: https://ad-creator-studio-145408551061.asia-south1.run.app
+    description: Cloud Run Production Orchestrator
+paths:
+  /api/gemini/jobs:
+    post:
+      summary: Creates a single video ad production job based on a PSN.
+      operationId: createVideoJob
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                category_tab:
+                  type: string
+                  description: "The product category (e.g., 'mobile v2', 'washing machine')"
+                model_target:
+                  type: string
+                  description: "The GenAI video model to use (e.g., 'gemini-omni-flash-preview')"
+                psn:
+                  type: string
+                  description: "The Product Serial Number"
+                file_gcs_uri:
+                  type: string
+                  description: "GCS URI of the product data sheet"
+              required:
+                - psn
+                - file_gcs_uri
+      responses:
+        '200':
+          description: A2UI Google Workspace Card indicating the job has been queued.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/gemini/batch:
+    post:
+      summary: Triggers a massive batch production pipeline from a Google Sheet.
+      operationId: createBatchJob
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                file_gcs_uri:
+                  type: string
+                  description: "GCS URI of the master batch data sheet"
+                model_target:
+                  type: string
+              required:
+                - file_gcs_uri
+      responses:
+        '200':
+          description: A2UI Google Workspace Card indicating the batch has been dispatched.
+          content:
+            application/json:
+              schema:
+                type: object
