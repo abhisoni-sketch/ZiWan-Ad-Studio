@@ -322,3 +322,19 @@ The dataset includes:
 - **15 Distinct Products:** Ranging from flat panel displays (smartphones, TVs) to volumetric appliances (motorcycles, blenders) to fully test the Hybrid Safety Net.
 - **45 Clean Studio Images:** Exactly 3 angles per product (e.g., Front, Side, Back) on pure white backgrounds, ensuring the `is_clean_product_shot` flag returns `True`.
 - **`sample_catalog.csv`:** A properly formatted catalog mapping the products to their `Image Path 1`, `Image Path 2`, and `Image Path 3`.
+
+
+---
+
+## ⚠️ Prototype Disclaimer & Production Readiness
+
+**ZiWan - Ad Studio** is provided as an open-source architectural blueprint and Proof-of-Concept (PoC). While the underlying Gemini Enterprise Agent Platform (including **Gemini Omni Flash and Veo**) offers enterprise-grade capabilities, the orchestration layer in this repository has been designed for demonstration and foundational prototyping purposes. 
+
+**Important considerations before production deployment:**
+This solution should **not** be deployed into a production environment without undergoing rigorous, enterprise-standard validations. If adapting this architecture for a live project, organizations must implement and validate proper Non-Functional Requirements (NFRs) and functional test suites, including but not limited to:
+* **Functional & Integration Testing:** Ensuring end-to-end multi-agent workflows gracefully handle data anomalies, API timeouts, and edge cases.
+* **Comprehensive Load Testing:** Validating system stability and throughput under massive, concurrent asynchronous job volumes.
+* **Quota & Throttling Management:** Implementing strict API rate-limiting, robust Dead Letter Queues (DLQs), and enforcing quota limits to prevent runaway billing or throttling errors.
+* **Security & Auditing:** Conducting thorough security reviews prior to handling live customer data. 
+
+This repository is strictly for educational, prototyping, and foundational architectural design.
