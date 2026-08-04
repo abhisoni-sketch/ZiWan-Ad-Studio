@@ -26,8 +26,8 @@
 Yes. The entire multi-agent orchestration pipeline is built on Google Vertex AI Foundation Models:
 
 * **Gemini 3.1 Pro:** Core reasoning engine used by the Scripting Agent and Segmentation Agent to synthesize 60-second commercial concepts, scene transitions, and camera movement physics.
-* **Gemini 3.5 Flash / Gemini Omni Flash:** Computer vision analysis engine used by the Context Agent to perform automated multi-device clutter filtering, text-density scrubbing, and chimera distortion guardrails *(preventing 3D chassis melting on flat products like phones/TVs)*.
-* **Veo 3.1 Fast (Vertex AI Video API):** High-definition video diffusion engine for generating photorealistic, motion-controlled visual scene clips.
+* **Gemini 3.5 Flash (Multimodal VLLM):** Computer vision analysis engine used by the Context Agent to perform automated image quality inspection, multi-device clutter filtering, text-density scrubbing, and visual attribute extraction.
+* **Gemini Omni Flash / Veo 3.1 Fast (Generative Video Engine):** High-definition video diffusion engine used by the Generation Agent to generate photorealistic, motion-controlled video clips while enforcing 2D camera sweep physics to prevent 3D chassis distortion ("melting") on flat products like phones and TVs.
 * **Gemini 3.1 Flash TTS:** Natural multi-speaker Text-To-Speech audio engine for voiceover narration.
 * **Lyria Audio Engine & Procedural FFmpeg:** Automated dynamic background music crossfading, audio ducking, and `atempo` voiceover time-stretching.
 
