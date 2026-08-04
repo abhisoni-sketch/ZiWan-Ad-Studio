@@ -6,7 +6,7 @@
 # ==============================================================================
 
 # Primary Google Cloud Project ID
-project_id = "dark-torch-384306"
+project_id = "your-gcp-project-id"
 
 # GCP Region & Zone for Resource Deployment
 region = "us-central1"
@@ -17,7 +17,7 @@ environment = "production"
 
 # Cloud Run Container Configuration
 service_name            = "ziwan-ad-studio"
-container_image         = "us-central1-docker.pkg.dev/dark-torch-384306/ziwan-ad-studio-repo/ziwan-ad-studio:latest"
+container_image         = "us-central1-docker.pkg.dev/your-gcp-project-id/ziwan-ad-studio-repo/ziwan-ad-studio:latest"
 cpu_limit               = "2000m"  # 2 vCPU
 memory_limit            = "4Gi"    # 4 GB RAM
 min_instances           = 0        # 0 for scale-to-zero cost savings

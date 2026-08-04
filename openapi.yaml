@@ -18,7 +18,7 @@ info:
   description: Headless API for the Generative AI ZiWan - Ad Studio. Compliant with ADK 2.0 and integrated with Gemini Enterprise Workspace.
   version: 2.0.0-golden-a2ui
 servers:
-  - url: https://ad-creator-studio-145408551061.asia-south1.run.app
+  - url: https://ziwan-ad-studio-your-project-id.run.app
     description: Cloud Run Production Orchestrator
 paths:
   /api/gemini/jobs:

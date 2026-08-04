@@ -283,7 +283,7 @@ The application is fully parameterized via environment variables (`.env` file or
 
 | Environment Variable | Description | Default Fallback |
 | :--- | :--- | :--- |
-| `GOOGLE_CLOUD_PROJECT` | GCP Project ID for Gemini Enterprise Agent Platform and GCS API calls. | `dark-torch-384306` |
+| `GOOGLE_CLOUD_PROJECT` | GCP Project ID for Gemini Enterprise Agent Platform and GCS API calls. | `your-gcp-project-id` |
 | `DEFAULT_LOCATION` | Regional location for standard Gemini Enterprise Agent Platform models. | `asia-south1` |
 | `GCS_MOUNT_PATH` | Path for temporary file staging. | `/tmp/` |
 | `INGEST_BUCKET` | GCS bucket name for raw catalog sheets and images. | `${PROJECT_ID}-ingest-vault` |

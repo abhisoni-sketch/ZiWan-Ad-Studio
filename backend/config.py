@@ -29,7 +29,7 @@ RUNNING_ON_GCP = (
 )
 
 # GCP Specific Configuration
-PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT", "dark-torch-384306")
+PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT", "your-gcp-project-id")
 INGEST_BUCKET = os.getenv("INGEST_BUCKET", f"{PROJECT_ID}-ingest-vault")
 OUTPUT_BUCKET = os.getenv("OUTPUT_BUCKET", f"{PROJECT_ID}-production-vault")
 

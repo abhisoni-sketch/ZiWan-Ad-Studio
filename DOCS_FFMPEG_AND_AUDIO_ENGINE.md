@@ -1,6 +1,6 @@
 # 🎬 Procedural FFmpeg Compositing & Audio Engine Documentation
 
-This document explains the procedural multi-pass rendering pipeline, audio time-stretching algorithms, and subtitle overlay drawing executed by the **Master Stitcher Engine** ([backend/agents/stitcher.py](file:///Users/abhisoni/Documents/Ad_Creator/forPublicgit/backend/agents/stitcher.py)).
+This document explains the procedural multi-pass rendering pipeline, audio time-stretching algorithms, and subtitle overlay drawing executed by the **Master Stitcher Engine** ([backend/agents/stitcher.py](./backend/agents/stitcher.py)).
 
 ---
 

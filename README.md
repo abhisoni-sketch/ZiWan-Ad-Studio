@@ -89,7 +89,7 @@ terraform plan
 terraform apply
 ```
 
-*For complete Terraform details, refer to the [Terraform Documentation](file:///Users/abhisoni/Documents/Ad_Creator/forPublicgit/terraform/README.md).*
+*For complete Terraform details, refer to the [Terraform Documentation](./terraform/README.md).*
 
 ---
 
@@ -130,10 +130,10 @@ ZiWan Ad Studio enforces strict data privacy policies:
 * **Least-Privilege IAM:** Service accounts are bound strictly to required GCP scopes (`roles/aiplatform.user`, `roles/storage.objectAdmin`).
 * **Auto-Purging Storage:** Temporary rendering files in GCS are automatically purged after 7 days via lifecycle rules.
 
-*Read our full [Security Policy](file:///Users/abhisoni/Documents/Ad_Creator/forPublicgit/SECURITY.md).*
+*Read our full [Security Policy](./SECURITY.md).*
 
 ---
 
 ## 📄 License
 
-Distributed under the [MIT License](file:///Users/abhisoni/Documents/Ad_Creator/forPublicgit/LICENSE).
+Distributed under the [MIT License](./LICENSE).

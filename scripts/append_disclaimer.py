@@ -1,6 +1,6 @@
 import os
 
-target_dir = '/Users/abhisoni/Documents/Ad_Creator/forPublicgit'
+target_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 files_to_update = ['ARCHITECTURE.md', 'TECHNICAL_DOSSIER.md']
 
 disclaimer = """
