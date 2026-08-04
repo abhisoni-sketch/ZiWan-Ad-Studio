@@ -12,6 +12,8 @@ scratch/
 *.wav
 *.mp3
 *.csv
+!sample_dataset/*.csv
+!sample_dataset/**/*.csv
 *.xlsx
 CodeReview/
 report.md

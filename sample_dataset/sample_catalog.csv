@@ -1,0 +1,16 @@
+FSN,Product ID,Category,Brand,Model Name,Key Feature 1,Key Feature 2,Key Feature 3,Image Path 1,Image Path 2,Image Path 3
+MOBHH69N2XATECZZ,P001,Mobile Phone,TechCorp,Lumina X1,120Hz OLED Display,50MP AI Camera,All-Day Battery,images/mobile_phone.jpg,images/mobile_phone_back.jpg,images/mobile_phone_side.jpg
+TABHH78N3YBTEDYA,P002,Tablet,TechCorp,TabPro 12,12.9-inch Retina,M-Series Chip,Stylus Support,images/tablet.jpg,images/tablet_side.jpg,images/tablet_back.jpg
+MTHH89N4ZCTEEZB,P003,Motorcycle,Velocity,StreetFighter 800,800cc Twin Engine,ABS Brakes,LED Headlights,images/motorcycle.jpg,images/motorcycle_front.jpg,images/motorcycle_back.jpg
+TVHH90N5ADTEFAC,P004,Television,VisionCo,Ultra 65,65-inch 4K UHD,Dolby Vision,Smart OS,images/television.jpg,images/television_side.jpg,images/television_back.jpg
+MWHH01N6BETEFBD,P005,Microwave,HomeTech,ChefWave 800,800W Power,Convection Mode,Touch Panel,images/microwave.jpg,images/microwave_open.jpg,images/microwave_angled.jpg
+ACHH12N7CFTEDCE,P006,Air Conditioner,CoolBreeze,Arctic 1.5,1.5 Ton Capacity,Inverter Tech,Wi-Fi Enabled,images/air_conditioner.jpg,images/air_conditioner_side.jpg,images/air_conditioner_remote.jpg
+RFHH23N8DFTEEDF,P007,Refrigerator,FrostLine,Double Door 400L,400L Capacity,Frost Free,Energy Star,images/refrigerator.jpg,images/refrigerator_open.jpg,images/refrigerator_side.jpg
+TYHH34N9EFTEDFE,P008,Tyre,GripMaster,AllSeason Pro,All-Weather Grip,Puncture Resistant,17-inch rim,images/tyre.jpg,images/tyre_tread.jpg,images/tyre_angled.jpg
+WMHH45N0FGTEDGF,P009,Washing Machine,AquaWash,FrontLoad 8kg,8kg Capacity,Steam Cycle,Inverter Motor,images/washing_machine.jpg,images/washing_machine_open.jpg,images/washing_machine_angled.jpg
+SPHH56N1GHTEDHG,P010,Speaker System,SoundWave,Boom 360,360-Degree Audio,Bluetooth 5.0,24hr Battery,images/speaker_system.jpg,images/speaker_system_top.jpg,images/speaker_system_back.jpg
+BLHH67N2HJTEDIH,P011,Blender,HomeTech,GlassBlend 500,500W Motor,Glass Pitcher,5 Speeds,images/blender_front.jpg,images/blender_side.jpg,images/blender_top.jpg
+EMHH78N3KKTEDJI,P012,Espresso Machine,BrewMaster,ProBarista X,15 Bar Pressure,Milk Frother,Stainless Steel,images/espresso_machine_front.jpg,images/espresso_machine_side.jpg,images/espresso_machine_angled.jpg
+LPHH89N4LKTEDKJ,P013,Laptop,TechCorp,UltraBook Pro,14-inch 4K Display,16GB RAM,1TB NVMe SSD,images/laptop_front_open.jpg,images/laptop_closed_top.jpg,images/laptop_side_ports.jpg
+CFHH90N5MKTEDLK,P014,Ceiling Fan,AirFlow,Breeze 48,48-inch Sweep,LED Light Kit,Remote Control,images/ceiling_fan_bottom.jpg,images/ceiling_fan_side.jpg,images/ceiling_fan_angled.jpg
+SWHH01N6NKTEDML,P015,Smartwatch,TechCorp,WatchActive 2,Heart Rate Monitor,Built-in GPS,5ATM Water Resist,images/smartwatch_front.jpg,images/smartwatch_side.jpg,images/smartwatch_back.jpg
