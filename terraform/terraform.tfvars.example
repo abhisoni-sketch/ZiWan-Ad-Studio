@@ -1,0 +1,35 @@
+# ==============================================================================
+# ZiWan Ad Studio — Example Terraform Variables File (terraform.tfvars.example)
+# ==============================================================================
+# Copy this file to `terraform.tfvars` and customize with your GCP credentials.
+# DO NOT commit your actual `terraform.tfvars` file with sensitive secrets to Git.
+# ==============================================================================
+
+# Primary Google Cloud Project ID
+project_id = "dark-torch-384306"
+
+# GCP Region & Zone for Resource Deployment
+region = "us-central1"
+zone   = "us-central1-a"
+
+# Environment Identifier
+environment = "production"
+
+# Cloud Run Container Configuration
+service_name            = "ziwan-ad-studio"
+container_image         = "us-central1-docker.pkg.dev/dark-torch-384306/ziwan-ad-studio-repo/ziwan-ad-studio:latest"
+cpu_limit               = "2000m"  # 2 vCPU
+memory_limit            = "4Gi"    # 4 GB RAM
+min_instances           = 0        # 0 for scale-to-zero cost savings
+max_instances           = 10       # Max autoscaling instances
+request_timeout_seconds = 3600     # 60 minutes for long rendering jobs
+
+# Storage & Security Settings
+gcs_location           = "US"
+storage_class          = "STANDARD"
+staging_retention_days = 7
+allow_unauthenticated  = true
+
+# Pub/Sub Dead Letter Queue Configuration
+enable_dead_letter_queue = true
+max_delivery_attempts   = 5
