@@ -311,14 +311,23 @@ EXPOSE 8080
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8080"]
 ```
 
-### **Single-Command Cloud Run Deployment**
+### **Infrastructure as Code (Terraform)**
+The repository includes a complete, production-ready **Terraform (HCL)** deployment module under `terraform/`:
+* **Cloud Run v2 Service:** Configured with 2 vCPU, 4 GB RAM, scale-to-zero autoscaling, and 3600s execution timeout.
+* **GCS Storage Vaults:** Assets, Outputs, and Auto-purging Staging vaults with 7-day lifecycle retention rules.
+* **Pub/Sub Messaging:** Event-driven micro-agent topics + Dead-Letter Queue (DLQ) safeguards.
+* **Artifact Registry:** Dedicated Docker container repository (`ziwan-ad-studio-repo`).
+
 ```bash
-gcloud run deploy ad-creator-studio \
-  --source . \
-  --region asia-south1 \
-  --allow-unauthenticated \
-  --set-env-vars GOOGLE_CLOUD_PROJECT=your-gcp-project-id
+cd terraform
+terraform init && terraform apply
 ```
+
+### **Automated CI/CD Pipeline (GitHub Actions)**
+The repository contains a GitHub Actions workflow (`.github/workflows/ci_cd_deploy.yml`) that automatically:
+1. Runs Python `flake8` linting and unit tests on pull requests.
+2. Validates Terraform syntax and formatting (`terraform validate`).
+3. Builds the Docker container, pushes to GCP Artifact Registry, and deploys to Cloud Run on merge to `main`.
 
 
 ---
