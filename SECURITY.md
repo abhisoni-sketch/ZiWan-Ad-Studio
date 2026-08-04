@@ -37,5 +37,5 @@ To prevent runaway Pub/Sub execution queues and cost leakage:
 If you discover a security vulnerability within this repository, please do **NOT** open a public GitHub issue.
 
 Please report the issue directly to the maintainers:
-* **Security Contact:** `abhisoni@google.com`
+* **Security Contact:** `security-reports@example.com`
 * **Response Time:** We aim to acknowledge reports within 24–48 hours and provide remediation updates.
