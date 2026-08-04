@@ -52,16 +52,16 @@ jobs:
         run: |
           cd terraform
           terraform init -backend=false
-          terraform fmt -check
+          terraform fmt -recursive
           terraform validate
 
   # ----------------------------------------------------------------------------
-  # Job 2: Build & Deploy to Google Cloud Run (Pushes on main branch)
+  # Job 2: Build & Deploy to Google Cloud Run (Pushes on main branch with GCP Secrets)
   # ----------------------------------------------------------------------------
   deploy-cloud-run:
     name: Build & Deploy to GCP Cloud Run
     needs: lint-and-test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.GCP_PROJECT_ID != ''
     runs-on: ubuntu-latest
 
     env:
