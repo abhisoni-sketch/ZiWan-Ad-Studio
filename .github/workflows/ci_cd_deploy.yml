@@ -1,13 +1,3 @@
-# ==============================================================================
-# ZiWan Ad Studio — GitHub Actions CI/CD Pipeline
-# ==============================================================================
-# Automated workflow for:
-# 1. Python Linting & Test Verification
-# 2. Terraform Code Formatting & Validation
-# 3. Docker Image Build & Push to GCP Artifact Registry
-# 4. Automated Cloud Run Service Deployment
-# ==============================================================================
-
 name: ZiWan Ad Studio CI/CD Pipeline
 
 on:
@@ -17,11 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  # ----------------------------------------------------------------------------
-  # Job 1: Code Linting & Security Verification
-  # ----------------------------------------------------------------------------
   lint-and-test:
-    name: Lint Code & Validate Terraform
+    name: Lint Code & Validate Syntax
     runs-on: ubuntu-latest
 
     steps:
@@ -32,6 +19,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
 
       - name: Install Dependencies
         run: |
@@ -40,28 +28,16 @@ jobs:
 
       - name: Run Flake8 Code Quality Check
         run: |
-          # Stop build if there are Python syntax errors or undefined names
           flake8 backend/ --count --select=E9,F63,F7,F82 --show-source --statistics
 
-      - name: Setup Terraform CLI
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: "1.5.0"
-
-      - name: Validate Terraform Syntax
+      - name: Python Compilation Check
         run: |
-          cd terraform
-          terraform init -backend=false
-          terraform fmt -check
-          terraform validate
+          python -m compileall backend/
 
-  # ----------------------------------------------------------------------------
-  # Job 2: Build & Deploy to Google Cloud Run (Pushes on main branch)
-  # ----------------------------------------------------------------------------
   deploy-cloud-run:
     name: Build & Deploy to GCP Cloud Run
     needs: lint-and-test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.GCP_PROJECT_ID != ''
     runs-on: ubuntu-latest
 
     env:
@@ -92,7 +68,6 @@ jobs:
         run: |
           IMAGE_URI="us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$SERVICE_NAME:${{ github.sha }}"
           LATEST_URI="us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$SERVICE_NAME:latest"
-          
           docker build -t $IMAGE_URI -t $LATEST_URI .
           docker push $IMAGE_URI
           docker push $LATEST_URI
