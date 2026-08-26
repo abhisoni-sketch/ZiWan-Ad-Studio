@@ -19,16 +19,16 @@
 
 ```mermaid
 flowchart TB
-    subgraph Client Layer
+    subgraph ClientLayer["Client Layer"]
         UI["Web Application (React 18 + Tailwind CSS)"]
     end
 
-    subgraph API & Messaging Gateway
+    subgraph APIGateway["API & Messaging Gateway"]
         FastAPI["FastAPI App Gateway (backend/main.py)"]
         Broker["Event Broker / PubSub (backend/event_broker.py)"]
     end
 
-    subgraph Micro-Agent Fleet
+    subgraph AgentFleet["Micro-Agent Fleet"]
         ContextAgent["1. Context Agent\n(Spec Extraction & Vision Quality)"]
         ScriptAgent["2. Scripting Agent\n(60s Script Synthesis)"]
         SegAgent["3. Segmentation Agent\n(Clip Breakdown & VFX Directives)"]
@@ -37,12 +37,12 @@ flowchart TB
         Stitcher["6. Master Stitcher Engine\n(FFmpeg Compositing)"]
     end
 
-    subgraph Data & Storage Layer
+    subgraph StorageLayer["Data & Storage Layer"]
         DB["DB Provider\n(Local JSON / Cloud Firestore)"]
         Storage["Storage Provider\n(Local storage/ / GCS Vaults)"]
     end
 
-    subgraph Gemini Enterprise Agent Platform Foundation Models
+    subgraph FoundationModels["Foundation Models & Vertex AI"]
         GeminiPro["Gemini 3.1 Pro\n(Reasoning & Scripting)"]
         GeminiVision["Gemini 3.1 Pro Vision\n(Image Analysis & QC)"]
         VeoAPI["Veo 3.1 Fast / Omni Flash\n(Video Generation API)"]

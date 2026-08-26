@@ -6,33 +6,14 @@
 
 ## 🏗️ Architecture Overview
 
-```
-[Product Catalog / Images] 
-           │
-           ▼
-   ┌────────────────┐
-   │ Context Agent  │ ──> (Vision Analysis, Clean Background & Multi-Device Filtering)
-   └────────────────┘
-           │
-           ▼
-   ┌────────────────┐
-   │Scripting Agent │ ──> (Gemini Script Synthesis)
-   └────────────────┘
-           │
-           ▼
-  ┌──────────────────┐
-  │Segmentation Agent│ ──> (Dynamic Camera Physics & Metaphorical VFX Placement)
-  └──────────────────┘
-           │
-           ▼
-  ┌──────────────────┐
-  │ Generation Agent │ ──> (Gemini Enterprise Agent Platform API: Gemini Omni / Veo 3.1 Fast)
-  └──────────────────┘
-           │
-           ▼
-  ┌──────────────────┐
-  │  Stitcher Engine │ ──> (FFmpeg Composition: Video, TTS Audio, BGM & Overlays)
-  └──────────────────┘
+```mermaid
+flowchart TD
+    Input["Product Catalog / Images (CSV / Excel)"] --> ContextAgent["1. Context Agent<br>(Vision Quality & Multi-Device Filter)"]
+    ContextAgent --> ScriptingAgent["2. Scripting Agent<br>(Gemini 3.1 Script Synthesis)"]
+    ScriptingAgent --> SegmentationAgent["3. Segmentation Agent<br>(Camera Physics & VFX Placement)"]
+    SegmentationAgent --> GenAgent["4. Generation Agent<br>(Gemini Omni / Veo 3.1 Fast API)"]
+    GenAgent --> StitcherEngine["5. Master Stitcher Engine<br>(FFmpeg Audio/Video Compositing)"]
+    StitcherEngine --> MasterVideo["Broadcast-Ready 1080p Video Ad"]
 ```
 
 ---

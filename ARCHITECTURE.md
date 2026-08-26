@@ -12,33 +12,33 @@ The system leverages an asynchronous, event-driven microservices architecture vi
 
 ```mermaid
 flowchart TB
-    subgraph Client Layer
+    subgraph ClientLayer["Client Layer"]
         UI["User / Web Application<br>(React + Tailwind CSS)"]
     end
 
-    subgraph API & Messaging Gateway
+    subgraph APIGateway["API & Messaging Gateway"]
         FastAPI["FastAPI App Gateway<br>(/api/upload, /api/jobs)"]
         Broker{{"Event Broker<br>(Pub/Sub Topology)"}}
     end
 
-    subgraph Data & Storage Layer
+    subgraph StorageLayer["Data & Storage Layer"]
         DB[("Database Provider<br>(JSON / Firestore)")]
         GCS_Ingest[("Ingest Vault (GCS)<br>(Raw Spreads & Images)")]
         GCS_Output[("Production Vault (GCS)<br>(1080p MP4s)")]
     end
 
-    subgraph Phase 1: Ingestion & Vision Analytics
+    subgraph Phase1["Phase 1: Ingestion & Vision Analytics"]
         Context["Context Agent<br>(Extracts specs, detects form-factor)"]
         Vision["Gemini 3.1 Pro Vision<br>(Image Analysis Schema)"]
     end
 
-    subgraph Phase 2 & 3: Cognitive & Directorial
+    subgraph Phase2_3["Phase 2 & 3: Cognitive & Directorial"]
         Script["Scripting Agent<br>(60s Voiceover Synthesis)"]
         Seg["Segmentation Agent<br>(Scene Splitting & VFX Physics)"]
         GeminiPro["Gemini 3.1 Pro<br>(Reasoning Engine)"]
     end
 
-    subgraph Phase 4 & 5: Generative Media & Post-Production
+    subgraph Phase4_5["Phase 4 & 5: Generative Media & Post-Production"]
         Gen["Generation Agent<br>(Multi-pass Rendering)"]
         TTS["Gemini 3.1 Flash TTS<br>(Audio Tracks)"]
         Veo["Veo 3.1 Fast / Omni API<br>(Video Frames)"]
